@@ -152,41 +152,6 @@ namespace HW2
 
             //        Console.WriteLine();
             //    }
-
-
-            //6
-
-            Console.Write("Введіть текст: ");
-            string input = Console.ReadLine();
-            string result = CapitalizeSentences(input);
-            Console.WriteLine("\nРезультат:");
-            Console.WriteLine(result);
-        }
-
-        static string CapitalizeSentences(string text)
-        {
-            char[] delimiters = { '.', '!', '?' }; 
-            string[] sentences = text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 0; i < sentences.Length; i++)
-            {
-                sentences[i] = sentences[i].Trim(); 
-                if (sentences[i].Length > 0)
-                {
-                    sentences[i] = char.ToUpper(sentences[i][0]) + sentences[i].Substring(1);
-                }
-            }
-            string output = "";
-            int index = 0;
-            foreach (char c in text)
-            {
-                output += c;
-                if (delimiters.Contains(c) && index < sentences.Length)
-                {
-                    output += " " + sentences[index++];
-                }
-            }
-            return output;
-
         }
     }
 }
